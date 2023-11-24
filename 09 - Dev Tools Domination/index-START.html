@@ -1,47 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Console Tricks!</title>
-  <link rel="icon" href="https://fav.farm/🔥" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Console Tricks!</title>
+    <link rel="icon" href="https://fav.farm/🔥" />
+  </head>
+  <body>
+    <p onClick="makeGreen()">×BREAK×DOWN×</p>
 
-  <p onClick="makeGreen()">×BREAK×DOWN×</p>
+    <script>
+      const dogs = [
+        { name: "Snickers", age: 2 },
+        { name: "hugo", age: 8 },
+      ];
 
-  <script>
-    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+      function makeGreen() {
+        const p = document.querySelector("p");
+        p.style.color = "#BADA55";
+        p.style.fontSize = "50px";
+      }
 
-    function makeGreen() {
-      const p = document.querySelector('p');
-      p.style.color = '#BADA55';
-      p.style.fontSize = '50px';
-    }
+      // Regular
+      console.log("Hello World!");
+      // Interpolated
+      console.log("Hallo Ich bin ein %s string!", ":)");
+      // Styled
+      console.log(
+        "%c Hallo Ich bin ein glücklicher String!",
+        "font-size:20px; background:red; color: black; text-shadow: 0px 2px 0px white"
+      );
+      // warning!
+      console.warn("Achtung!/Attention!"); // cwa for short
+      // Error :|
+      console.error("Scheiße!/Shit!"); // cer for short
+      // Info
+      console.info("Koala schläft rund 20 Stunden pro Tag!"); // cin for short
+      // Testing
+      const p = document.querySelector("p");
+      console.assert(p.classList.contains("ouch"), "That is wrong!"); // cas for short
+      // clearing
+      // console.clear(); ccl for short
 
-    // Regular
+      // Viewing DOM Elements
+      console.dir(p); //cdi for short
 
-    // Interpolated
+      // Grouping together
+      dogs.forEach((dog) => {
+        console.groupCollapsed(`${dog.name}`);
+        console.log(`This is ${dog.name}`);
+        console.log(`${dog.name} is ${dog.age} years old`);
+        console.log(`${dog.name} is ${dog.age * 7} dog years old`);
+        console.groupEnd(`${dog.name}`);
+      });
 
-    // Styled
+      // counting
+      console.count("Eule"); // cco for short
+      console.count("Eule");
+      console.count("Eule");
+      console.count("Eule");
+      console.count("Katze");
+      console.count("Eule");
+      console.count("Eule");
+      console.count("Eule");
+      console.count("Katze");
+      console.count("Katze");
 
-    // warning!
+      // timing
+      console.time("fetching data"); // cti for short
+      fetch("https://api.github.com/users/wesbos")
+        .then((data) => data.json)
+        .then((data) => {
+          console.timeEnd("fetching data"); // cte for short
+          console.log(data);
+        });
 
-    // Error :|
-
-    // Info
-
-    // Testing
-
-    // clearing
-
-    // Viewing DOM Elements
-
-    // Grouping together
-
-    // counting
-
-    // timing
-
-  </script>
-</body>
+      // table
+      console.table(dogs); // clt for short
+    </script>
+  </body>
 </html>
