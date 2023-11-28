@@ -107,6 +107,7 @@
         if (e.shiftKey && this.checked) {
           checkboxes.forEach((checkbox) => {
             console.log(checkbox);
+            // Below, (checkbox === this) checks if the checkbox we are on is the current cb or not
             if (checkbox === this || checkbox === lastChecked) {
               inBetween = !inBetween;
               console.log("Starting");
