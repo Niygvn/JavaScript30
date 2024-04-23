@@ -27,7 +27,7 @@ svg {
 
 .wrapper {
   padding: 20px;
-  max-width: 350px;
+  max-width: 550px;
   background: rgba(255, 255, 255, 0.95);
   box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -84,6 +84,10 @@ h2 {
   margin-top: 20px;
   display: flex;
   justify-content: space-between;
+
+  #uncheckAll {
+    margin: 0 10px 0 10px;
+  }
 
   input:hover {
     cursor: pointer;

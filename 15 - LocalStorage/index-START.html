@@ -52,8 +52,9 @@
         <input type="text" name="item" placeholder="Item Name" required />
         <input type="submit" value="+ Add Item" />
         <div class="buttons">
-          <input id="checkAll" type="submit" value="✓ Check All " />
-          <input id="uncheckAll" type="submit" value="✗ Uncheck All" />
+          <input id="checkAll" type="submit" value="✅ Check All " />
+          <input id="uncheckAll" type="submit" value="❌ Uncheck All" />
+          <input id="clearList" type="submit" value="🧹️ Clear the List" />
         </div>
       </form>
     </div>
@@ -64,6 +65,7 @@
       const items = JSON.parse(localStorage.getItem("items")) || [];
       const checkAllButton = document.getElementById("checkAll");
       const uncheckAllButton = document.getElementById("uncheckAll");
+      const clearList = document.getElementById("clearList");
 
       function addItem(e) {
         e.preventDefault();
@@ -124,10 +126,16 @@
         populateList(items, itemsList);
       }
 
+      function listClear(e) {
+        localStorage.clear();
+        location.reload();
+      }
+
       addItems.addEventListener("submit", addItem);
       itemsList.addEventListener("click", toggleDone);
       checkAllButton.addEventListener("click", checkAll);
       uncheckAllButton.addEventListener("click", uncheckAll);
+      clearList.addEventListener("click", listClear);
       populateList(items, itemsList);
     </script>
   </body>
