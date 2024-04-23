@@ -104,7 +104,6 @@
         /* console.log(index); */
         items[index].done = !items[index].done;
         localStorage.setItem("items", JSON.stringify(items));
-        /* populateList(items, itemsList); */
         let changedItem = document.getElementById(`item${index}`);
         /* console.log(changedItem); */
         items[index].done
