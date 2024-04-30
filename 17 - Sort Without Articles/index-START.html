@@ -81,13 +81,7 @@
       /* console.log(sorted); */
 
       function pushList(arr, listElement) {
-        listElement.innerHTML = arr
-          .map((item) => {
-            return `<li>
-                    ${item}
-                  </li>`;
-          })
-          .join(""); // join the li elements so no commas are shown between them.
+        listElement.innerHTML = arr.map((item) => `<li>${item}</li>`).join(""); // join the li elements so no commas are shown between them.
       }
 
       // Function that puts the articles back where they belong before listing
